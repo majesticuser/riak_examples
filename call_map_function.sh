@@ -1,0 +1,18 @@
+#!/bin/bash
+
+DATA='
+{
+  "inputs":[
+  ["rooms","101"],["rooms","102"],["rooms","103"]
+  ],
+  "query":[
+  {"map":{
+    "language":"javascript",
+    "bucket":"my_functions",
+    "key":"map_capacity"
+  }}
+  ]
+}
+'
+
+curl -X POST -H "content-type:application/json" http://localhost:8098/mapred --data "$DATA"
